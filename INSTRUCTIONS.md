@@ -1,5 +1,3 @@
-It replaces the `btusb` kernel module with one compatible with some Bluetooth 5.0 "CSR" devices. It does this as follows:
-
 ## 1. Download the linux-stable source and switch to the correct branch
 
 Download the source:
