@@ -16,7 +16,7 @@ It replaces the `btusb` kernel module with one compatible with some Bluetooth 5.
 
 # Is that really a good idea?
 
-## Probably not
+### Probably not
 
 Automating the process of patching source code for kernel modules is generally not the best way to go about things.
 
@@ -24,7 +24,7 @@ I wrote this script to save time for myself until the kernel gets improved suppo
 
 ### Do it manually instead
 
-Read INSTRUCTIONS.md file for step-by-step instructions on building your own module.
+Read [INSTRUCTIONS.md](INSTRUCTIONS.md) for step-by-step instructions on building your own module.
 
 # Tested Distributions
 
