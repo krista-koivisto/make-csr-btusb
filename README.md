@@ -32,13 +32,13 @@ Read [INSTRUCTIONS.md](INSTRUCTIONS.md) for step-by-step instructions on buildin
 
 The following command snippet worked on a fresh Ubuntu 18.04 LTS:
 
-```sudo apt update && sudo apt -y install git make linux-headers-$(uname -r) build-essential flex bison libssl-dev libelf-dev && ./make-install-btusb.sh```
+```sudo apt update && sudo apt -y install git linux-headers-$(uname -r) build-essential flex bison libssl-dev libelf-dev && ./make-install-btusb.sh```
 
 ### Manjaro
 
 The script has also been tested in Manjaro Linux where it worked without modification, but the system was not a new install and as such some packages may already have been installed.
 
-```sudo pacman -Syu git make linux-headers bison base-devel bc```
+```sudo pacman -Syu git linux-headers bison base-devel bc```
 
 # Compatible kernels
 
