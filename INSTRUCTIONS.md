@@ -66,7 +66,7 @@ cp /lib/modules/$(uname -r)/build/.config ./
 cp /lib/modules/$(uname -r)/build/Module.symvers ./
 ```
 
-Now we can make the config. The target `olddefconfig` automatically chooses for you, we don't need to worry about anything like that for our module.
+Now we can make the config. The `olddefconfig` target automatically chooses for you, we don't need to worry about anything like that for our module.
 
 ```Bash
 make olddefconfig
@@ -80,7 +80,7 @@ We need to get the current kernel's EXTRAVERSION for this. It is required to mak
 make EXTRAVERSION=$(grep "EXTRAVERSION = " "/lib/modules/`uname -r`/build/Makefile" | awk '{print $3}') modules_prepare
 ```
 
-If you don't want to try to get your EXTRAVERSION or if you run into trouble finding it, you can alternative load the module using `--force-vermagic` later.
+If you don't want to try to get your EXTRAVERSION or if you run into trouble finding it, you can alternatively load the module using the `--force-vermagic` modprobe switch later.
 
 ## 4. Compiling
 
@@ -127,3 +127,5 @@ Now let's remove the old module and insert the new one:
 sudo modprobe -r btusb
 sudo modprobe btusb
 ```
+
+Done! Enjoy your Bluetooth module!
