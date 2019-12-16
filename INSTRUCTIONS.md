@@ -18,7 +18,7 @@ fi
 git checkout -B "btusb$BTU_KERNEL_VERSION" $(git tag -l | grep -E "$BTU_KERNEL_VERSION\$")
 ```
 
-## 2. Patch the `drivers/bluetooth/btusb.c` file in place, adding in two new options for conditional statements.
+## 2. Patch the `drivers/bluetooth/btusb.c` file
 
   * `bcdDevice == 0x8891` - Corresponds to CSR firmware version
   * `le16_to_cpu(rp->lmp_subver) == 0x1113`
