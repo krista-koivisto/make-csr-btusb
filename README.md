@@ -22,19 +22,19 @@ Automating the process of patching source code for kernel modules is generally n
 
 I wrote this script to save time for myself until the kernel gets improved support for CSR Bluetooth devices. That said, others are of course free to use it at their own risk.
 
-## Do it manually instead
+### Do it manually instead
 
 Read INSTRUCTIONS.md file for step-by-step instructions on building your own module.
 
 # Tested Distributions
 
-## Ubuntu 18.04 LTS
+### Ubuntu 18.04 LTS
 
 The following command snippet worked on a fresh Ubuntu 18.04 LTS:
 
 ```sudo apt update && sudo apt -y install git make linux-headers-$(uname -r) build-essential flex bison libssl-dev libelf-dev && ./make-install-btusb.sh```
 
-## Manjaro
+### Manjaro
 
 The script has also been tested in Manjaro Linux where it worked without modification, but the system was not a new install and as such some packages may already have been installed.
 
