@@ -80,9 +80,6 @@ acquire_kernel_sources () {
 
 		echo "[*] Checking for tag for kernel $KERNEL_VERSION."
 		GIT_KERNEL_TAG=$(git tag -l | grep -E "$KERNEL_VERSION\$")
-
-		echo "[*] Getting tag for kernel $KERNEL_VERSION"
-		GIT_KERNEL_TAG=$(git tag -l | grep -E "$KERNEL_VERSION\$")
 		
 		if [ ${#GIT_KERNEL_TAG} -eq 0 ]; then
 			echo "[#] ERROR: Failed to find kernel version $KERNEL_VERSION tag among sources! Unable to continue!"
