@@ -74,9 +74,21 @@ acquire_kernel_sources () {
 			echo "[*] Found kernerl with revision number 0, adjusting version."
 			KERNEL_VERSION=$(echo "$KERNEL_VERSION" | grep -Eo '[0-9]+\.[0-9]+')
 		fi
+		
+		echo "[*] Fetching git tags."
+		git fetch --tags >> "$LOG_FILE"
+
+		echo "[*] Checking for tag for kernel $KERNEL_VERSION."
+		GIT_KERNEL_TAG=$(git tag -l | grep -E "$KERNEL_VERSION\$")
 
 		echo "[*] Getting tag for kernel $KERNEL_VERSION"
 		GIT_KERNEL_TAG=$(git tag -l | grep -E "$KERNEL_VERSION\$")
+		
+		if [ ${#GIT_KERNEL_TAG} -eq 0 ]; then
+			echo "[#] ERROR: Failed to find kernel version $KERNEL_VERSION tag among sources! Unable to continue!"
+			exit
+		fi
+		
 		echo "[*] Creating/resetting branch $MODULE$KERNEL_VERSION"
 		git checkout -B "$MODULE$KERNEL_VERSION" "$GIT_KERNEL_TAG" >> "$LOG_FILE"
 
